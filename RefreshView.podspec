@@ -10,15 +10,10 @@ Pod::Spec.new do |s|
 
   s.name         = "RefreshView"
   s.version      = "0.0.1"
-  s.summary      = "A short description of RefreshView."
+  s.summary      = "RefreshView is useful view for animation switching."
 
   s.description  = <<-DESC
-                   A longer description of RefreshView in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
+                   RefreshView is useful view for animation switching. Feel happy to use.
                    DESC
 
   s.homepage     = "https://github.com/sisufo/CBHazeTransitionViewController"
@@ -32,8 +27,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  # s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -47,9 +41,6 @@ Pod::Spec.new do |s|
   #
   
   s.author             = { "yufei" => "sisufointernational@gmail.com" }
-  # Or just: s.author    = "yufei"
-  # s.authors            = { "yufei" => "sisufointernational@gmail.com" }
-  # s.social_media_url   = "http://twitter.com/yufei"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -57,12 +48,9 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
   s.platform     = :ios, "6.0"
 
-  #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
+  s.ios.deployment_target = "6.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -82,7 +70,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "CBHazeTransitionViewControllerRef/RefreshView.*"
+  s.source_files  = "CBHazeTransitionViewController/RefreshView.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -121,7 +109,7 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"

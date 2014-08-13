@@ -146,3 +146,7 @@ Podfile.lock
 
 iOSInjectionProject/*
 *.dat
+
+*.dia
+
+Build/Products/Debug-iphonesimulator/CBHazeTransitionViewController.app.dSYM/Contents/Resources/DWARF/CBHazeTransitionViewController
