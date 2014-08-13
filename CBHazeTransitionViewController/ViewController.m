@@ -73,7 +73,7 @@
     self.upperBottomLabel.numberOfLines = 0;
     [self.upperScrollView addSubview:self.upperBottomLabel];
     
-    self.upperRefreshView = [[RefreshView alloc] initWithFrame:CGRectZero inScrollView:self.upperScrollView withDirection:RefreshViewDirectionDown];
+    self.upperRefreshView = [[RefreshView alloc] initWithFrame:CGRectZero inScrollView:self.upperScrollView withDirection:RefreshViewDirectionDown stretchColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"settingPattern"]]];
     self.upperRefreshView.translatesAutoresizingMaskIntoConstraints = NO;
     self.upperRefreshView.backgroundColor = [UIColor clearColor];
     [self.upperScrollView addSubview:self.upperRefreshView];
@@ -108,7 +108,7 @@
     [self.lowerScrollView addConstraint:self.lowerBottomLabelBottomConstraint];
     [self.lowerScrollView bringSubviewToFront:lowerContentView];
     
-    self.lowerRefreshView = [[RefreshView alloc] initWithFrame:CGRectZero inScrollView:self.lowerScrollView withDirection:RefreshViewDirectionUp];
+    self.lowerRefreshView = [[RefreshView alloc] initWithFrame:CGRectZero inScrollView:self.lowerScrollView withDirection:RefreshViewDirectionUp stretchColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"mainPattern"]]];
     self.lowerRefreshView.translatesAutoresizingMaskIntoConstraints = NO;
     self.lowerRefreshView.backgroundColor = [UIColor clearColor];
     [self.lowerScrollView addSubview:self.lowerRefreshView];

@@ -20,6 +20,8 @@
 
 @property (nonatomic, assign) UIScrollView *scrollView;
 
+@property (nonatomic, strong) UIColor *stretchColor;
+
 @end
 
 @implementation RefreshView
@@ -29,11 +31,12 @@ static inline CGFloat lerp(CGFloat a, CGFloat b, CGFloat p)
     return a + (b - a) * p;
 }
 
-- (id)initWithFrame:(CGRect)frame inScrollView:(UIScrollView *)scrollView withDirection:(RefreshViewDirection)direction;
+- (id)initWithFrame:(CGRect)frame inScrollView:(UIScrollView *)scrollView withDirection:(RefreshViewDirection)direction stretchColor:(UIColor *)stretchColor
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.scrollView = scrollView;
+        self.stretchColor = stretchColor;
         moveDirection = direction;
         [scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     }
@@ -50,7 +53,7 @@ static inline CGFloat lerp(CGFloat a, CGFloat b, CGFloat p)
 {
     UIBezierPath *path = [UIBezierPath bezierPath];
     if (moveDirection == RefreshViewDirectionDown) {
-        [[UIColor colorWithPatternImage:[UIImage imageNamed:@"settingPattern"]] setFill];
+        [self.stretchColor setFill];
         CGFloat circleY;
         if (offsetY <= kSkipedHeight)
             circleY = offsetY*118.f/kSkipedHeight-kRadius;
@@ -69,7 +72,7 @@ static inline CGFloat lerp(CGFloat a, CGFloat b, CGFloat p)
         [path fill];
     }
     else if (offsetY <= -kSkipedHeight) {
-        [[UIColor colorWithPatternImage:[UIImage imageNamed:@"mainPattern"]] setFill];
+        [self.stretchColor setFill];
         CGFloat circleY = rect.size.height+offsetY+kRadius+kSkipedHeight;
         [path moveToPoint:CGPointMake(0, rect.size.height)];
         CGPoint leftCp1 = CGPointMake(lerp(0, 160-kRadius, 0.4), lerp(circleY, circleY-offsetY-kSkipedHeight, 0.6));

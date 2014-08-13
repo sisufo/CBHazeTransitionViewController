@@ -15,6 +15,6 @@ typedef enum {
 
 @interface RefreshView : UIView
 
-- (id)initWithFrame:(CGRect)frame inScrollView:(UIScrollView *)scrollView withDirection:(RefreshViewDirection)direction;
+- (id)initWithFrame:(CGRect)frame inScrollView:(UIScrollView *)scrollView withDirection:(RefreshViewDirection)direction stretchColor:(UIColor *)stretchColor;
 
 @end
