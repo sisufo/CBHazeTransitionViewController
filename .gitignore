@@ -145,3 +145,4 @@ Podfile.lock
 # Repo: github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/*
+*.dat
